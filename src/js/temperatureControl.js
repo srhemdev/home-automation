@@ -3,17 +3,33 @@
  */
 
 
-var temperatureControl = (function(){
+var temperatureControl = (function($){
     function temperatureControl(config){
         this.config = config;
-        this.increaseTemperature = function(range) {
-            console.log(range);
+        if(!this.config.query) {
+            this.config.query ={temperature :  this.config.temperature || '40'};
         }
 
-        this.decreaseTemperature = function(range) {
-            console.log(range);
+        this.increaseTemperature = function() {
+            this.config.temperature++;
+            $('.temperatureValue').text(this.config.temperature);
+            this.config.query.temperature =  this.config.temperature;
+
+            this.updateData(this.config);
         }
+
+        this.decreaseTemperature =function (){
+            this.config.temperature--;
+            $('.temperatureValue').text(this.config.temperature);
+            this.config.query.temperature =  this.config.temperature;
+            this.updateData(this.config);
+        }
+
+        this.init =function (){
+            $('.temperatureValue').text(this.config.temperature);
+        }
+
     }
 
     return temperatureControl;
-})();
+})(jQuery);

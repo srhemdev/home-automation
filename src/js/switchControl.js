@@ -4,43 +4,60 @@
 
 var switchControl = (function($){
 
-    function switchControl(config) {}
+    function switchControl() {}
 
     switchControl.prototype.get = function toggle(config) {
-        var id = '#' + config.id;
-        $.getJSON(config.stateUrl, function(data) {
+        var display = $(config.displayElement),
+            toggle = $(config.toggleElement);
 
-            console.log(data);
+        $.getJSON(config.stateUrl, function(data) {
+            if(data.state) {
+                display.removeClass('hidden')
+                toggle.addClass('active')
+            } else {
+                display.addClass('hidden')
+                toggle.removeClass('active')
+            }
         });
     }
 
     switchControl.prototype.toggle = function toggle(config) {
         // Toggle states and send update.
-        var id = '#' + config.id;
-        var className = '.' + config.id +' .display';
-        $(id).toggleClass(config.class);
-        if($(id).hasClass(config.class)) {
-            $(className).removeClass('hidden')
+        var display = $(config.displayElement),
+            toggle = $(config.toggleElement);
+
+        toggle.toggleClass('active');
+
+        if(toggle.hasClass('active')) {
+            display.removeClass('hidden')
         } else {
-            $(className).addClass('hidden')
+            display.addClass('hidden')
         }
+
         // Trigger update to server if necessary.
         if(config.stateUrl){
-            $.ajax
-            ({
-                type: "POST",
-                dataType : 'json',
-                async: false,
-                url: config.stateUrl,
-                data: { data: JSON.stringify({ 'state': $(id).hasClass(config.class)}) },
-                success: function () {
-
-                },
-                failure: function() {
-
-                }
-            });
+             this.updateData(config)
         }
+    }
+
+    switchControl.prototype.updateData = function(config) {
+        config.query.state = $(config.toggleElement).hasClass('active');
+        console.log(config)
+
+        $.ajax
+        ({
+            type: "POST",
+            dataType : 'json',
+            async: false,
+            url: config.stateUrl,
+            data: { data: JSON.stringify(config.query) },
+            success: function () {
+
+            },
+            failure: function() {
+
+            }
+        });
     }
 
     switchControl.build = function (constr, config) {
@@ -59,7 +76,7 @@ var switchControl = (function($){
                 switchControl[constr].prototype[fn] = switchControl.prototype[fn];
             }
         }
-        // create a new automobile using the factory
+        // create a new control using the factory
         return new switchControl[constr](config);
     };
 

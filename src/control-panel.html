@@ -12,23 +12,23 @@
         <div class="controlPanel flex-column">
             <h2 class="header">Control Panel</h2>
             <div class="control-options">
-                <div class="control light">
+                <div class="control" id="light">
                     <div class="flex-row space-between">
                         <div>Lights</div>
-                        <div class="toggle" id="light" title="Light On/Off"></div>
+                        <div class="toggle" title="Light On/Off"></div>
                     </div>
                     <div class="display flex-row hidden">
-                        <input id="light-range" type="range" min="Low" max="High" step="3" />
+                        <input class="lightRange" type="range" step="3" />
                     </div>
                 </div>
-                <div class="control temperature">
+                <div class="control" id="temperature">
                     <div class="flex-row space-between">
                         <div>Thermometer:</div>
-                        <div class="toggle" id="temperature" title="Thermometer On/Off"></div>
+                        <div class="toggle" title="Thermometer On/Off"></div>
                     </div>
 
-                    <div class="flex-row temperature-digits" title="Thermometer On/Off">
-                        <span>24</span>°C</span>
+                    <div class="flex-row temperatureDigits" title="Thermometer On/Off">
+                        <span class="temperatureValue"></span>°C
                     </div>
 
                     <div class="display flex-row hidden">
@@ -37,13 +37,13 @@
                     </div>
 
                 </div>
-                <div class="control curtain">
+                <div class="control" id="curtain">
                     <div class="flex-row space-between">
                         <div>Curtains</div>
-                        <div class="toggle" id="curtain" title="Curtain Close/Open"></div>
+                        <div class="toggle"  title="Curtain Close/Open"></div>
                     </div>
                     <div class="display flex-row hidden">
-                        <input id="curtains-range" type="range" min="Low" max="High" step="3" />
+                        <input class="curtainRange" type="range" step="3" />
                     </div>
                 </div>
             </div>
