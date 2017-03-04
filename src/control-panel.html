@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Home Automation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/control-panel.css">
+        <script src="js/libraries/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <div class="controlPanel flex-column">
+            <h2 class="header">Control Panel</h2>
+            <div class="control-options">
+                <div class="control light">
+                    <div class="flex-row space-between">
+                        <div>Lights</div>
+                        <div class="toggle" id="light" title="Light On/Off"></div>
+                    </div>
+                    <div class="display flex-row hidden">
+                        <input id="light-range" type="range" min="Low" max="High" step="3" />
+                    </div>
+                </div>
+                <div class="control temperature">
+                    <div class="flex-row space-between">
+                        <div>Thermometer:</div>
+                        <div class="toggle" id="temperature" title="Thermometer On/Off"></div>
+                    </div>
+
+                    <div class="flex-row temperature-digits" title="Thermometer On/Off">
+                        <span>24</span>°C</span>
+                    </div>
+
+                    <div class="display flex-row hidden">
+                        <span class="arrow-up" title="Increase temperature"></span>
+                        <span class="arrow-down" title="Decrease temperature"></span>
+                    </div>
+
+                </div>
+                <div class="control curtain">
+                    <div class="flex-row space-between">
+                        <div>Curtains</div>
+                        <div class="toggle" id="curtain" title="Curtain Close/Open"></div>
+                    </div>
+                    <div class="display flex-row hidden">
+                        <input id="curtains-range" type="range" min="Low" max="High" step="3" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/libraries/jquery-3.1.1.min.js"></script>
+
+        <script src="js/curtainsControl.js"></script>
+        <script src="js/lightsControl.js"></script>
+        <script src="js/temperatureControl.js"></script>
+
+        <script src="js/switchControl.js"></script>
+        <script src="js/controlPanel.js"></script>
+
+    </body>
+</html>

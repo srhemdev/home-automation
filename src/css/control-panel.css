@@ -1,0 +1,90 @@
+html {
+    color: #222;
+    font-family: Verdana;
+}
+
+
+.display.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.controlPanel {
+    background-color: lightgrey;
+}
+.controlPanel .header {
+    padding: 30px;
+    text-align: center;
+}
+
+.controlPanel .control-options .control {
+    padding: 30px;
+    border-top: 1px solid darkgray;
+}
+
+.toggle {
+    width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: red;
+    position: relative;
+}
+
+.toggle.active {
+    background-color: green;
+}
+
+.toggle:after {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    background-color: white;
+
+}
+
+.toggle.active:after{
+    left: auto;
+    right: 0;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display:flex;
+    flex-direction: column;
+}
+
+.temperature-digits {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #222;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #222;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
