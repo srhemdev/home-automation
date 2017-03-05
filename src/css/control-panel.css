@@ -3,7 +3,9 @@ html {
     font-family: Verdana;
 }
 
-
+.display {
+    padding: 20px 0 0 32px;
+}
 .display.hidden {
     display: none;
 }
@@ -75,8 +77,8 @@ html {
 
 .temperatureDigits {
     font-weight: bold;
-    font-size: 2em;
-    padding-left: 40px;
+    font-size: 36px;
+    padding-left: 32px;
 }
 
 .arrows {
