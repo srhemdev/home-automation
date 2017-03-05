@@ -7,8 +7,8 @@ var switchControl = (function($){
     function switchControl() {}
 
     switchControl.prototype.get = function toggle(config) {
-        var display = $(config.displayElement),
-            toggle = $(config.toggleElement);
+        var display = $('#' + config.id + ' ' + config.displayClassName),
+            toggle = $('#' + config.id  + ' ' + config.toggleClassName);
 
         $.getJSON(config.stateUrl, function(data) {
             if(data.state) {
@@ -23,8 +23,8 @@ var switchControl = (function($){
 
     switchControl.prototype.toggle = function toggle(config) {
         // Toggle states and send update.
-        var display = $(config.displayElement),
-            toggle = $(config.toggleElement);
+        var display = $('#' + config.id  + ' ' + config.displayClassName),
+            toggle = $('#' + config.id  + ' ' + config.toggleClassName);
 
         toggle.toggleClass('active');
 
@@ -41,7 +41,7 @@ var switchControl = (function($){
     }
 
     switchControl.prototype.updateData = function(config) {
-        config.query.state = $(config.toggleElement).hasClass('active');
+        config.query.state = $(config.toggleClassName).hasClass('active');
 
         $.ajax
         ({

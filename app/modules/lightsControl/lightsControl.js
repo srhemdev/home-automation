@@ -12,7 +12,7 @@ var lightsControl = (function($){
                 vm.config.query ={range :  vm.config.range || '40'};
             }
 
-            $(vm.config.parent).append('<div class="control" id="light">\
+            $(vm.config.parent).append('<div class="control" id="' + vm.config.id + '">\
                                         <div class="flex-row space-between">\
                                             <div>\
                                                 <i class="material-icons">lightbulb_outline</i>Lights\
@@ -25,17 +25,19 @@ var lightsControl = (function($){
                                         </div>');
 
             function init() {
-                vm.get(vm.config);
-                $('#light .toggle').on('click', function(){
 
+                vm.get(vm.config);
+
+                $("#" + vm.config.id +' .toggle').on('click', function(){
+                    console.log('am i here')
                     vm.toggle(vm.config);
                 });
 
-                $('.lightRange').on('change', adjustLightRange);
+                $("#" + vm.config.id +' .lightRange').on('change', adjustLightRange);
             }
 
             function adjustLightRange() {
-                vm.config.range = $('.lightRange').val();
+                vm.config.range = $("#" + vm.config.id + ' .lightRange').val();
                 vm.config.query.range = vm.config.range;
                 vm.updateData(vm.config);
             }

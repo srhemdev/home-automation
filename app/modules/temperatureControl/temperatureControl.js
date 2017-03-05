@@ -19,7 +19,7 @@ var temperatureControl = (function($){
         function init() {
             vm.get(vm.config);
 
-            $(vm.config.parent).append('<div class="control" id="temperature">\
+            $(vm.config.parent).append('<div class="control" id="' + vm.config.id + '">\
                                             <div class="flex-row space-between">\
                                                <div><i class="material-icons">filter_drama</i>Temperature</div>\
                                                <div class="toggle" title="Thermometer On/Off"></div>\
@@ -32,15 +32,15 @@ var temperatureControl = (function($){
                                                <span class="arrow-up" title="Increase temperature"></span>\
                                            </div>\
                                         </div>');
-            arrowUp = $('.arrow-up');
-            arrowDown = $('.arrow-down');
-            temperature = $('.temperatureValue');
+            arrowUp = $('#' + vm.config.id +' .arrow-up');
+            arrowDown = $('#' + vm.config.id +  ' .arrow-down');
+            temperature = $('#' + vm.config.id +' .temperatureValue');
 
             updateTemperature();
 
             arrowUp.on('click', increaseTemperature);
             arrowDown.on('click', decreaseTemperature);
-            $('#temperature .toggle').on('click', function(){
+            $("#" + vm.config.id + ' .toggle').on('click', function(){
 
                 vm.toggle(vm.config);
             });

@@ -14,7 +14,7 @@ var curtainsControl = (function($){
                 vm.config.query ={range :  vm.config.range || '40'};
             }
 
-            $(vm.config.parent).append('<div class="control" id="curtain">\
+            $(vm.config.parent).append('<div class="control" id="' + vm.config.id + '">\
                                             <div class="flex-row space-between">\
                                                 <div><i class="material-icons">settings</i>Curtains</div>\
                                                 <div class="toggle"  title="Curtain Close/Open"></div>\
@@ -28,17 +28,15 @@ var curtainsControl = (function($){
             function init() {
                 vm.get(vm.config);
 
-                $('#curtain .toggle').on('click', function(){
+                $("#" + vm.config.id + ' .toggle').on('click', function(){
                     vm.toggle(vm.config);
                 });
 
-                $('.curtainRange').on('change', adjustCurtain);
+                $("#" + vm.config.id +' .curtainRange').on('change', adjustCurtain);
             }
 
             function adjustCurtain() {
-
-                console.log('hello')
-                vm.config.range = $('.curtainRange').val();
+                vm.config.range = $("#" + vm.config.id + ' .curtainRange').val();
                 vm.config.query.range = vm.config.range;
                 vm.updateData(vm.config);
             }
