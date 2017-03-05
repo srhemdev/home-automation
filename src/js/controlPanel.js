@@ -85,7 +85,7 @@
             curtains.get(curtains.config);
             lights.get(lights.config);
             temperature.get(temperature.config);
-            temperature.init(temperature.config);
+            temperature.updateTemperature();
         }
 
         init();

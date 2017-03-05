@@ -88,7 +88,16 @@ html {
     border-top: 20px solid #222;
 }
 
+.arrow-up.disabled {
+    border-bottom-color: darkgray;
+}
+
+.arrow-down.disabled {
+    border-top-color: darkgray;
+}
+
 .space-between {
     justify-content: space-between;
 }
+
 
