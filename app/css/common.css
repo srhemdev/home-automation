@@ -3,37 +3,19 @@ html {
     font-family: Verdana;
 }
 
-.display {
+
+.home-automation-app .display {
     padding: 20px 0 0 32px;
 }
-.display.hidden {
+.home-automation-app .display.hidden {
     display: none;
 }
 
-.invisible {
+.home-automation-app .invisible {
     visibility: hidden;
 }
 
-.controlPanel {
-    background-color: lightgrey;
-}
-.controlPanel .header {
-    padding: 30px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.controlPanel .header .material-icons{
-    vertical-align: bottom;
-}
-
-.controlPanel .control-options .control {
-    padding: 30px;
-    border-top: 1px solid darkgray;
-}
-
-.toggle {
+.home-automation-app .toggle {
     width: 50px;
     height: 25px;
     border-radius: 50px;
@@ -43,11 +25,11 @@ html {
     transition: .4s;
 }
 
-.toggle.active {
+.home-automation-app  .toggle.active {
     background-color: green;
 }
 
-.toggle:after {
+.home-automation-app .toggle:after {
     content: '';
     width: 25px;
     height: 25px;
@@ -60,33 +42,27 @@ html {
 
 }
 
-.toggle.active:after{
+.home-automation-app  .toggle.active:after{
     left: auto;
     right: 0;
 }
 
-.flex-row {
+.home-automation-app  .flex-row {
     display: flex;
     flex-direction: row;
 }
 
-.flex-column {
+.home-automation-app  .flex-column {
     display:flex;
     flex-direction: column;
 }
 
-.temperatureDigits {
-    font-weight: bold;
-    font-size: 36px;
-    padding-left: 32px;
-}
-
-.arrows {
+.home-automation-app .arrows {
     padding-top: 10px;
     padding-left: 40px;
 }
 
-.arrow-up {
+.home-automation-app .arrow-up {
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
@@ -94,7 +70,7 @@ html {
     border-bottom: 20px solid #222;
 }
 
-.arrow-down {
+.home-automation-app .arrow-down {
     width: 0;
     height: 0;
     border-left: 20px solid transparent;
@@ -102,11 +78,11 @@ html {
     border-top: 20px solid #222;
 }
 
-.arrow-up.disabled {
+.home-automation-app .arrow-up.disabled {
     border-bottom-color: darkgray;
 }
 
-.arrow-down.disabled {
+.home-automation-app .arrow-down.disabled {
     border-top-color: darkgray;
 }
 
@@ -114,13 +90,8 @@ html {
     justify-content: space-between;
 }
 
-.material-icons {
+.home-automation-app .material-icons {
     padding-right: 10px;
     font-size: 36px;
     vertical-align: middle;
 }
-
-
-
-
-

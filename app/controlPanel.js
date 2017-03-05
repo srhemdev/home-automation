@@ -37,7 +37,8 @@
                 toggle = $(evt.target).hasClass('toggle'),
                 arrowUp = $(evt.target).hasClass('arrow-up'),
                 arrowDown = $(evt.target).hasClass('arrow-down'),
-                eventType  = {toggle: toggle,
+                eventType  = {
+                              toggle: toggle,
                               arrowUp: arrowUp,
                               arrowDown: arrowDown
                              };

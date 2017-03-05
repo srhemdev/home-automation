@@ -5,11 +5,11 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Home Automation</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/control-panel.css">
         <link href="libraries/iconfont/material-icons.css" rel="stylesheet">
-        <script src="libraries/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/control-panel.css">
     </head>
-    <body>
+    <body class="home-automation-app">
         <div class="controlPanel flex-column">
             <div class="header"><i class="material-icons">home</i>Control Panel</div>
             <div class="control-options">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="control" id="temperature">
                     <div class="flex-row space-between">
-                        <div><i class="material-icons">filter_drama</i>Thermometer:</div>
+                        <div><i class="material-icons">filter_drama</i>Temperature</div>
                         <div class="toggle" title="Thermometer On/Off"></div>
                     </div>
 
@@ -50,14 +50,16 @@
 
             </div>
         </div>
+
+        <script src="libraries/modernizr-2.8.3.min.js"></script>
         <script src="libraries/jquery-3.1.1.min.js"></script>
 
-        <script src="js/curtainsControl.js"></script>
-        <script src="js/lightsControl.js"></script>
-        <script src="js/temperatureControl.js"></script>
+        <script src="modules/curtainsControl/curtainsControl.js"></script>
+        <script src="modules/lightsControl/lightsControl.js"></script>
+        <script src="modules/temperatureControl/temperatureControl.js"></script>
 
-        <script src="js/switchControl.js"></script>
-        <script src="js/controlPanel.js"></script>
+        <script src="modules/switchControl/switchControl.js"></script>
+        <script src="controlPanel.js"></script>
 
     </body>
 </html>

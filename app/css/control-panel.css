@@ -1,0 +1,38 @@
+.home-automation-app .controlPanel {
+    background-color: lightgrey;
+}
+.home-automation-app  .controlPanel .header {
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.home-automation-app
+.controlPanel
+.header
+.material-icons{
+    vertical-align: bottom;
+}
+
+.home-automation-app
+.controlPanel
+.control-options
+.control {
+    padding: 30px;
+    border-top: 1px solid darkgray;
+}
+
+
+.home-automation-app
+.controlPanel
+.control-options
+.control
+.temperatureDigits {
+    font-weight: bold;
+    font-size: 36px;
+    padding-left: 32px;
+}
+
+
+
