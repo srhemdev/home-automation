@@ -18,6 +18,12 @@ html {
 .controlPanel .header {
     padding: 30px;
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.controlPanel .header .material-icons{
+    vertical-align: bottom;
 }
 
 .controlPanel .control-options .control {
@@ -70,6 +76,12 @@ html {
 .temperatureDigits {
     font-weight: bold;
     font-size: 2em;
+    padding-left: 40px;
+}
+
+.arrows {
+    padding-top: 10px;
+    padding-left: 40px;
 }
 
 .arrow-up {
@@ -99,5 +111,14 @@ html {
 .space-between {
     justify-content: space-between;
 }
+
+.material-icons {
+    padding-right: 10px;
+    font-size: 36px;
+    vertical-align: middle;
+}
+
+
+
 
 

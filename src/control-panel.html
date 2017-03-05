@@ -6,16 +6,16 @@
         <title>Home Automation</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/control-panel.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="libraries/iconfont/material-icons.css" rel="stylesheet">
         <script src="libraries/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <div class="controlPanel flex-column">
-            <h2 class="header">Control Panel</h2>
+            <div class="header"><i class="material-icons">home</i>Control Panel</div>
             <div class="control-options">
                 <div class="control" id="light">
                     <div class="flex-row space-between">
-                        <div>Lights</div>
+                        <div><i class="material-icons">lightbulb_outline</i>Lights</div>
                         <div class="toggle" title="Light On/Off"></div>
                     </div>
                     <div class="display flex-row hidden">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="control" id="curtain">
                     <div class="flex-row space-between">
-                        <div>Curtains</div>
+                        <div><i class="material-icons">settings</i>Curtains</div>
                         <div class="toggle"  title="Curtain Close/Open"></div>
                     </div>
                     <div class="display flex-row hidden">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="control" id="temperature">
                     <div class="flex-row space-between">
-                        <div>Thermometer:</div>
+                        <div><i class="material-icons">filter_drama</i>Thermometer:</div>
                         <div class="toggle" title="Thermometer On/Off"></div>
                     </div>
 
@@ -41,7 +41,7 @@
                         <span class="temperatureValue"></span>°C
                     </div>
 
-                    <div class="display flex-row hidden">
+                    <div class="display flex-row hidden arrows">
                         <span class="arrow-down" title="Decrease temperature"></span>
                         <span class="arrow-up" title="Increase temperature"></span>
                     </div>
