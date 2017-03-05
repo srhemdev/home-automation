@@ -31,6 +31,8 @@ html {
     border-radius: 50px;
     background-color: red;
     position: relative;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
 
 .toggle.active {
@@ -45,6 +47,8 @@ html {
     position: absolute;
     left: 0;
     background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
 
 }
 

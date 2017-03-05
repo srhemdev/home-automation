@@ -42,7 +42,6 @@ var switchControl = (function($){
 
     switchControl.prototype.updateData = function(config) {
         config.query.state = $(config.toggleElement).hasClass('active');
-        console.log(config)
 
         $.ajax
         ({

@@ -1,12 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Home Automation</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/control-panel.css">
-        <script src="js/libraries/modernizr-2.8.3.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="libraries/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
         <div class="controlPanel flex-column">
@@ -21,6 +22,15 @@
                         <input class="lightRange" type="range" step="3" />
                     </div>
                 </div>
+                <div class="control" id="curtain">
+                    <div class="flex-row space-between">
+                        <div>Curtains</div>
+                        <div class="toggle"  title="Curtain Close/Open"></div>
+                    </div>
+                    <div class="display flex-row hidden">
+                        <input class="curtainRange" type="range" step="3" />
+                    </div>
+                </div>
                 <div class="control" id="temperature">
                     <div class="flex-row space-between">
                         <div>Thermometer:</div>
@@ -32,23 +42,15 @@
                     </div>
 
                     <div class="display flex-row hidden">
-                        <span class="arrow-up" title="Increase temperature"></span>
                         <span class="arrow-down" title="Decrease temperature"></span>
+                        <span class="arrow-up" title="Increase temperature"></span>
                     </div>
 
                 </div>
-                <div class="control" id="curtain">
-                    <div class="flex-row space-between">
-                        <div>Curtains</div>
-                        <div class="toggle"  title="Curtain Close/Open"></div>
-                    </div>
-                    <div class="display flex-row hidden">
-                        <input class="curtainRange" type="range" step="3" />
-                    </div>
-                </div>
+
             </div>
         </div>
-        <script src="js/libraries/jquery-3.1.1.min.js"></script>
+        <script src="libraries/jquery-3.1.1.min.js"></script>
 
         <script src="js/curtainsControl.js"></script>
         <script src="js/lightsControl.js"></script>
