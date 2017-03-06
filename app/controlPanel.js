@@ -7,44 +7,13 @@
     $(document).ready(function(){
 
         //Create the controls you want to see in the control panel
-
-        //Adding some default controls
-//        var lights = switchControl.build('lightsControl',{
-//                id:'light',
-//                name: 'Lights',
-//                stateUrl: MockData.lightStatusUrl,
-//                state: false,
-//                toggleClassName: '.toggle',
-//                displayClassName:'.display',
-//                parent: '.control-options'
-//            }),
-//            curtains = switchControl.build('curtainsControl',{
-//                id:'curtain',
-//                name: 'Curtains',
-//                stateUrl: MockData.curtainStatusUrl,
-//                state: false,
-//                toggleClassName: '.toggle',
-//                displayClassName: '.display',
-//                parent: '.control-options'
-//            }),
-//            temperature = switchControl.build('temperatureControl',{
-//                id:'temperature',
-//                name: 'Thermometer',
-//                stateUrl: MockData.temperatureUrl,
-//                state: false,
-//                temperature: 24,
-//                toggleClassName: '.toggle',
-//                displayClassName:'.display',
-//                parent: '.control-options'
-//            });
-//
         var configObject = {
             state: false,
             toggleClassName: '.toggle',
             displayClassName:'.display',
             parent: '.control-options'
-        };
-        var obj = {};
+            },
+            obj = {};
 
         function selectChoice(choice) {
             var control = '';
@@ -79,9 +48,10 @@
         });
 
         function init() {
-            selectChoice('light');
-            selectChoice('curtain');
-            selectChoice('temperature');
+            var controls = ['light', 'curtain', 'temperature'];
+            controls.forEach(function(control){
+                selectChoice(control);
+            });
         }
 
         init();
