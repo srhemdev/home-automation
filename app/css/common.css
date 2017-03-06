@@ -23,6 +23,7 @@ html {
     position: relative;
     -webkit-transition: .4s;
     transition: .4s;
+    cursor: pointer;
 }
 
 .home-automation-app  .toggle.active {
@@ -60,6 +61,7 @@ html {
 .home-automation-app .arrows {
     padding-top: 10px;
     padding-left: 40px;
+    cursor: pointer;
 }
 
 .home-automation-app .arrow-up {
@@ -95,3 +97,28 @@ html {
     font-size: 36px;
     vertical-align: middle;
 }
+
+.home-automation-app .material-icons.delete {
+    font-size: 24px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.home-automation-app input[type="button"] {
+    background-color: #4abecc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Verdana;
+    cursor: pointer;
+}
+
+.home-automation-app .select {
+    border: none;
+    background-color: #4abecc;
+    color: white;
+    font-size: 16px;
+    font-family: Verdana;
+}
+

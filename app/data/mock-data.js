@@ -1,10 +1,7 @@
 var MockData = (function(){
     return {
-        getTemperatureUrl: 'current-temperature.json',
-        setTemperatureUrl: 'current-temperature.json',
-        getLightStatusUrl: 'light-state.json',
-        setLightStatusUrl: 'light-state.json',
-        getCurtainStatusUrl: 'curtain-state.json',
-        setCurtainStatusUrl: 'curtain-state.json'
+        temperatureUrl: './data/temperature-state.json',
+        lightStatusUrl: './data/light-state.json',
+        curtainStatusUrl: './data/curtain-state.json'
     };
 })();

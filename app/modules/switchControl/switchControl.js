@@ -59,6 +59,10 @@ var switchControl = (function($){
         });
     }
 
+    switchControl.prototype.delete = function toggle(config) {
+        $('div#' + config.id+'.control').remove();
+    }
+
     switchControl.build = function (constr, config) {
         if (typeof switchControl[constr] !== "function") {
             throw {

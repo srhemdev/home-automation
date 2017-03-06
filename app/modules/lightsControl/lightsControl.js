@@ -17,7 +17,10 @@ var lightsControl = (function($){
                                             <div>\
                                                 <i class="material-icons">lightbulb_outline</i>Lights\
                                             </div>\
-                                            <div class="toggle" title="Light On/Off"></div>\
+                                            <div class="flex-row">\
+                                                <div class="toggle"  title="Lights On/Off"></div>\
+                                                <i class="material-icons delete">cancel</i>\
+                                            </div>\
                                         </div>\
                                             <div class="display flex-row hidden">\
                                             <input class="lightRange" type="range" step="3" \/>\
@@ -29,8 +32,11 @@ var lightsControl = (function($){
                 vm.get(vm.config);
 
                 $("#" + vm.config.id +' .toggle').on('click', function(){
-                    console.log('am i here')
                     vm.toggle(vm.config);
+                });
+
+                $("#" + vm.config.id + ' .delete').on('click', function(){
+                    vm.delete(vm.config);
                 });
 
                 $("#" + vm.config.id +' .lightRange').on('change', adjustLightRange);
