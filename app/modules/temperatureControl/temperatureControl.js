@@ -8,7 +8,7 @@ var temperatureControl = (function($){
 
     function temperatureControl(config){
         var vm = this,
-            arrowUp, arrowDown, temperature, metric, metricSelected;
+            arrowUp, arrowDown, temperature, metric;
 
         vm.config = config;
 
@@ -94,7 +94,6 @@ var temperatureControl = (function($){
 
         function changeMetric(evt) {
             $('#' + vm.config.id +' .temp-metric').find('a').removeClass("active");
-            //metricSelected.removeClass('.active');
             var target = $(evt.target);
             if(event.target.id === 'celcius') {
                 target.addClass('active');
@@ -117,9 +116,6 @@ var temperatureControl = (function($){
 
             updateTemperature();
         }
-
-
-
         init();
     }
 
