@@ -18,7 +18,7 @@ Components:
             lights of the house. It is a control which is created off the
             switchControl Factory class. In addition to the available common functions,
             contains functionality to control the light range based on scale from 0-100.
-            (ranging from dim to bright);
+            (ranging from dim to bright)
 
         -- switchControl
             An factory module which can be used to generate different controls based on the
@@ -93,7 +93,7 @@ It has slight modification just to get it up and running on plunker.
 Here is the link:
 https://plnkr.co/edit/8D3gCrjhMj1mXOJdJG3T?p=preview
 
-Please make sure to click on STOP and the RUN, so that the styles are
+Please make sure to click on STOP and then RUN, so that the styles are
 rendered correctly.
 
 Option 2:
