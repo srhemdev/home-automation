@@ -12,10 +12,10 @@ var switchControl = (function($){
 
         $.getJSON(config.stateUrl, function(data) {
             if(data.state) {
-                display.removeClass('hidden')
+                display.slideDown();
                 toggle.addClass('active')
             } else {
-                display.addClass('hidden')
+                display.slideUp();
                 toggle.removeClass('active')
             }
         });
@@ -29,9 +29,9 @@ var switchControl = (function($){
         toggle.toggleClass('active');
 
         if(toggle.hasClass('active')) {
-            display.removeClass('hidden')
+            display.slideDown();
         } else {
-            display.addClass('hidden')
+            display.slideUp();
         }
 
         // Trigger update to server if necessary.
