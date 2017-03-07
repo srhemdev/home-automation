@@ -106,11 +106,15 @@ var temperatureControl = (function($){
         }
 
         function convertTemperature(type) {
+            var result = vm.config.temperature;
             if(type === 'farenheit') {
-                vm.config.temperature = Math.round((vm.config.temperature *9)/5 + 32);
+                result= Math.round((result *9)/5 + 32);
             } else if(type === 'celcius') {
-                vm.config.temperature = Math.round(((vm.config.temperature - 32) * 5)/9);
+                result= Math.round(((result - 32) * 5)/9);
             }
+
+            vm.config.temperature = result;
+
             updateTemperature();
         }
 
