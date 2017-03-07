@@ -60,7 +60,11 @@ var switchControl = (function($){
     }
 
     switchControl.prototype.delete = function toggle(config) {
-        $('div#' + config.id+'.control').remove();
+        $('div#' + config.id + '.control').remove();
+        var options = $('.control-options')[0].children;
+        if(!options.length) {
+           $('.controlPanel .empty-message').show();
+        }
     }
 
     switchControl.build = function (constr, config) {
@@ -74,8 +78,7 @@ var switchControl = (function($){
         for (var fn in switchControl.prototype) {
             // Here, the method borrowing technique is used to
             // selectively inherit from the switchControl
-            if (  typeof switchControl[constr].prototype[fn] !== "function"
-                || switchControl[constr].prototype[fn].toString().indexOf('[native code]') > -1 ) {
+            if (typeof switchControl[constr].prototype[fn] !== "function") {
                 switchControl[constr].prototype[fn] = switchControl.prototype[fn];
             }
         }

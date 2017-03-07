@@ -122,3 +122,9 @@ html {
     font-family: Verdana;
 }
 
+.home-automation-app .error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+

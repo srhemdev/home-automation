@@ -12,8 +12,10 @@
             toggleClassName: '.toggle',
             displayClassName:'.display',
             parent: '.control-options'
-            },
-            obj = {};
+        },
+        options = $('.control-options')[0].children,
+        emptyMessage = $('.controlPanel .empty-message'),
+        errorMessage = $('.controlPanel .error-message');
 
         function selectChoice(choice) {
             var control = '';
@@ -43,8 +45,15 @@
 
         $('#control-choice-add').click(function(){
             var value = $('.control-choice').val();
-            selectChoice(value)
-
+            if(value === 'none') {
+                errorMessage.show();
+                return;
+            }
+            errorMessage.hide();
+            selectChoice(value);
+            if(options.length > 0) {
+                emptyMessage.hide();
+            }
         });
 
         function init() {
@@ -52,6 +61,9 @@
             controls.forEach(function(control){
                 selectChoice(control);
             });
+            if(options.length > 0) {
+                emptyMessage.hide();
+            }
         }
 
         init();

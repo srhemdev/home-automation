@@ -34,5 +34,14 @@
     padding-left: 32px;
 }
 
+.home-automation-app
+.controlPanel
+.empty-message {
+    padding: 30px;
+    text-align: center;
+    display: none;
+    border-top: 1px solid darkgray;
+}
+
 
 
