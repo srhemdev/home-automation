@@ -77,6 +77,51 @@ Components:
         The home automation controls are dynamically injected into the DOM depending on which
         ones you would like to add to your list of controls.
 
+---------------------------------------------------------------------------------------
+CHOICE OF BROWSERS TO RUN THE APPLICATION: CHROME OR FIREFOX(latest versions preferred)
+---------------------------------------------------------------------------------------
+
+
+
+How to run the app:
+------------------
+Option 1:(RECOMMENDED)
+---------
+The same version of this app is available on a plunker.
+It has slight modification just to get it up and running on plunker.
+
+Here is the link:
+https://plnkr.co/edit/8D3gCrjhMj1mXOJdJG3T?p=preview
+
+Please make sure to click on STOP and the RUN, so that the styles are
+rendered correctly.
+
+Option 2:
+---------
+-Open the file in your local editor(eg: Sublime or Webstorm if available)
+-Right Click on the file control-panel.html, there will be an option at
+the bottom to Open in Browser(Choose Chrome or Firefox)
+-A page will open up in your browser with similar URL:
+http://localhost:63342/House-Automation/home-automation/app/control-panel.html
+
+P.S:
+----
+I have not used any web server to run the code.
+
+Improvements:
+-------------
+-We can always add a local web server or http server packages from
+npm to run this code.
+-I have not used any MVC frameworks to create this application.It is purely based
+on Javascript and jQuery as suggested in Problem Statement.
+-Can add unit tests and also karma configuration to run unit tests.
+- Add gulp configuraton.
+
+
+
+
+
+
 
 
 
