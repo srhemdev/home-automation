@@ -7,8 +7,8 @@ var temperatureControl = (function($){
 
 
     function temperatureControl(config){
-        var vm = this;
-        var arrowUp, arrowDown, temperature;
+        var vm = this,
+            arrowUp, arrowDown, temperature, metric, metricSelected;
 
         vm.config = config;
 
@@ -28,7 +28,8 @@ var temperatureControl = (function($){
                                                </div>\
                                             </div>\
                                            <div class="flex-row temperatureDigits" title="Thermometer On/Off">\
-                                               <span class="temperatureValue"></span>°C\
+                                               <span class="temperatureValue"></span>\
+                                               <span class="temp-metric"><a id="celcius" class="active">°C</a> | <a id="farenheit">°F</a></span>\
                                            </div>\
                                            <div class="display flex-row hidden arrows">\
                                                <i title="Decrease temperature" class="material-icons arrow-down no-select">keyboard_arrow_down</i>\
@@ -38,9 +39,11 @@ var temperatureControl = (function($){
             arrowUp = $('#' + vm.config.id +' .arrow-up');
             arrowDown = $('#' + vm.config.id +  ' .arrow-down');
             temperature = $('#' + vm.config.id +' .temperatureValue');
+            metric = $('#' + vm.config.id +' .temp-metric');
 
             updateTemperature();
 
+            metric.on('click', changeMetric);
             arrowUp.on('click', increaseTemperature);
             arrowDown.on('click', decreaseTemperature);
 
@@ -63,7 +66,7 @@ var temperatureControl = (function($){
                 arrowDown.removeClass('disabled');
             }
 
-            if(vm.config.temperature == 32) {
+            if(vm.config.temperature === 32 || vm.config.temperature === 90) {
                 arrowUp.addClass('disabled');
                 return;
             }
@@ -79,7 +82,7 @@ var temperatureControl = (function($){
                 arrowUp.removeClass('disabled');
             }
 
-            if(vm.config.temperature == 16) {
+            if(vm.config.temperature === 16 || vm.config.temperature === 61) {
                 arrowDown.addClass('disabled');
                 return;
             }
@@ -88,6 +91,30 @@ var temperatureControl = (function($){
             vm.config.query.temperature =  vm.config.temperature;
             vm.updateData(vm.config);
         }
+
+        function changeMetric(evt) {
+            $('.temp-metric').find('a').removeClass("active");
+            //metricSelected.removeClass('.active');
+            var target = $(evt.target);
+            if(event.target.id === 'celcius') {
+                target.addClass('active');
+                convertTemperature('celcius');
+            } else if(event.target.id === 'farenheit') {
+                target.addClass('active');
+                convertTemperature('farenheit');
+            }
+        }
+
+        function convertTemperature(type) {
+            if(type === 'farenheit') {
+                vm.config.temperature = Math.round((vm.config.temperature *9)/5 + 32);
+            } else if(type === 'celcius') {
+                vm.config.temperature = Math.round(((vm.config.temperature - 32) * 5)/9);
+            }
+            updateTemperature();
+        }
+
+
 
         init();
     }

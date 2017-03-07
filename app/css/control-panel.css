@@ -20,7 +20,7 @@
 .control-options
 .control {
     padding: 30px;
-    border-top: 1px solid darkgray;
+    border-top: 1px solid #808080;
 }
 
 
@@ -36,11 +36,22 @@
 
 .home-automation-app
 .controlPanel
+.control-options
+.control
+.temperatureDigits
+.temp-metric {
+    font-weight: normal;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.home-automation-app
+.controlPanel
 .empty-message {
     padding: 30px;
     text-align: center;
     display: none;
-    border-top: 1px solid darkgray;
+    border-top: 1px solid #A9A9A9;
 }
 
 

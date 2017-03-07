@@ -116,6 +116,7 @@ npm to run this code.
 on Javascript and jQuery as suggested in Problem Statement.
 -Can add unit tests and also karma configuration to run unit tests.
 - Add gulp configuraton.
+- Can use SASS framework to simplify stylesheets capitalizing on its abilities.
 
 
 

@@ -66,14 +66,14 @@ html {
 
 .home-automation-app .arrow-up.disabled,
 .home-automation-app .arrow-down.disabled {
-    color: darkgray;
+    color: #808080;
 }
 
 .home-automation-app .arrow-up.material-icons,
 .home-automation-app .arrow-down.material-icons {
     padding-right: 0;
-    border: 1px solid gray;
-    background-color: lightblue;
+    border: 1px solid #808080;
+    background-color: #ADD8E6;
 }
 
 .space-between {
@@ -124,5 +124,14 @@ html {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+.home-automation-app a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.home-automation-app a.active{
+    color:  #4abecc;
 }
 
