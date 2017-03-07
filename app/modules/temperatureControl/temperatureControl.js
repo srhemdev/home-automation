@@ -93,7 +93,7 @@ var temperatureControl = (function($){
         }
 
         function changeMetric(evt) {
-            $('.temp-metric').find('a').removeClass("active");
+            $('#' + vm.config.id +' .temp-metric').find('a').removeClass("active");
             //metricSelected.removeClass('.active');
             var target = $(evt.target);
             if(event.target.id === 'celcius') {
