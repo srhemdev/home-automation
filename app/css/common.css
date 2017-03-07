@@ -64,28 +64,16 @@ html {
     cursor: pointer;
 }
 
-.home-automation-app .arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid #222;
-}
-
-.home-automation-app .arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid #222;
-}
-
-.home-automation-app .arrow-up.disabled {
-    border-bottom-color: darkgray;
-}
-
+.home-automation-app .arrow-up.disabled,
 .home-automation-app .arrow-down.disabled {
-    border-top-color: darkgray;
+    color: darkgray;
+}
+
+.home-automation-app .arrow-up.material-icons,
+.home-automation-app .arrow-down.material-icons {
+    padding-right: 0;
+    border: 1px solid gray;
+    background-color: lightblue;
 }
 
 .space-between {
@@ -126,5 +114,15 @@ html {
     color: red;
     font-size: 12px;
     display: none;
+}
+
+.home-automation-app .no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 

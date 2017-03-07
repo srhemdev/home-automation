@@ -31,8 +31,8 @@ var temperatureControl = (function($){
                                                <span class="temperatureValue"></span>°C\
                                            </div>\
                                            <div class="display flex-row hidden arrows">\
-                                               <span class="arrow-down" title="Decrease temperature"></span>\
-                                               <span class="arrow-up" title="Increase temperature"></span>\
+                                               <i title="Decrease temperature" class="material-icons arrow-down no-select">keyboard_arrow_down</i>\
+                                               <i title="Increase temperature" class="material-icons arrow-up no-select">keyboard_arrow_up</i>\
                                            </div>\
                                         </div>');
             arrowUp = $('#' + vm.config.id +' .arrow-up');
