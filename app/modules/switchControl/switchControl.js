@@ -6,7 +6,7 @@ var switchControl = (function($){
 
     function switchControl() {}
 
-    switchControl.prototype.get = function toggle(config) {
+    switchControl.prototype.get = function(config) {
         var display = $('#' + config.id + ' ' + config.displayClassName),
             toggle = $('#' + config.id  + ' ' + config.toggleClassName);
 
@@ -21,7 +21,7 @@ var switchControl = (function($){
         });
     }
 
-    switchControl.prototype.toggle = function toggle(config) {
+    switchControl.prototype.toggle = function(config) {
         // Toggle states and send update.
         var display = $('#' + config.id  + ' ' + config.displayClassName),
             toggle = $('#' + config.id  + ' ' + config.toggleClassName);
