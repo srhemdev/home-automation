@@ -110,11 +110,11 @@ I have not used any web server to run the code.
 
 Improvements:
 -------------
--We can always add a local web server or http server packages from
-npm to run this code.
--I have not used any MVC frameworks to create this application.It is purely based
+- We can always add a local web server or http server using npm to run this code
+locally on a web server.
+- I have not used any MVC frameworks to create this application. It is purely based
 on Javascript and jQuery as suggested in Problem Statement.
--Can add unit tests and also karma configuration to run unit tests.
+- Can add unit tests and also karma configuration to run unit tests.
 - Add gulp configuraton.
 - Can use SASS framework to simplify stylesheets capitalizing on its abilities.
 

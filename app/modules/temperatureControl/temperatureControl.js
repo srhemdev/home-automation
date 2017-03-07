@@ -95,10 +95,10 @@ var temperatureControl = (function($){
         function changeMetric(evt) {
             $('#' + vm.config.id +' .temp-metric').find('a').removeClass("active");
             var target = $(evt.target);
-            if(event.target.id === 'celcius') {
+            if(evt.target.id === 'celcius') {
                 target.addClass('active');
                 convertTemperature('celcius');
-            } else if(event.target.id === 'farenheit') {
+            } else if(evt.target.id === 'farenheit') {
                 target.addClass('active');
                 convertTemperature('farenheit');
             }
