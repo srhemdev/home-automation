@@ -8,7 +8,10 @@
 var lightsControl = (function($){
         function lightsControl(config){
             //set the config for lights control.
-            var vm = this;
+            var vm = this,
+                id = '#' + config.id,
+                toggle,del,lightRange;
+
             vm.config = config;
 
             if(!vm.config.query) {
@@ -30,26 +33,30 @@ var lightsControl = (function($){
                                             </div>\
                                         </div>');
 
+            toggle = $(id + ' .toggle');
+            del = $(id + ' .delete');
+            lightRange = $(id +' .lightRange');
+
             //init function to handle control initialization
             function init() {
 
                 vm.get(vm.config);
 
-                $("#" + vm.config.id +' .toggle').on('click', function(){
+                toggle.on('click', function(){
                     vm.toggle(vm.config);
                 });
 
-                $("#" + vm.config.id + ' .delete').on('click', function(){
+                del.on('click', function(){
                     vm.delete(vm.config);
                 });
 
-                $("#" + vm.config.id +' .lightRange').on('change', adjustLightRange);
+                lightRange.on('change', adjustLightRange);
             }
 
             //function to adjust light range from 0-100 on how dim, bright, too bright
             // you want the light to be.
             function adjustLightRange() {
-                vm.config.range = $("#" + vm.config.id + ' .lightRange').val();
+                vm.config.range = lightRange.val();
                 vm.config.query.range = vm.config.range;
                 vm.updateData(vm.config);
             }

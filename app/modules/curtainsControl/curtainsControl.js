@@ -9,7 +9,10 @@ var curtainsControl = (function($){
 
         function curtainsControl(config) {
             //set the config for curtains control.
-            var vm = this;
+            var vm = this,
+                id = '#' + config.id,
+                toggle,del,curtainRange;
+
             // some defaults
             vm.config = config;
 
@@ -30,25 +33,30 @@ var curtainsControl = (function($){
                                             </div>\
                                         </div>');
 
+
+            toggle = $(id + ' .toggle');
+            del = $(id + ' .delete');
+            curtainRange = $(id +' .curtainRange');
+
             //initialize the curtains control
             function init() {
                 vm.get(vm.config);
 
-                $("#" + vm.config.id + ' .toggle').on('click', function(){
+                toggle.on('click', function(){
                     vm.toggle(vm.config);
                 });
 
-                $("#" + vm.config.id + ' .delete').on('click', function(){
+                del.on('click', function(){
                     vm.delete(vm.config);
                 });
 
-                $("#" + vm.config.id +' .curtainRange').on('change', adjustCurtain);
+                curtainRange.on('change', adjustCurtain);
             }
 
             //function to adjust curtain openness range from 0-100
             // (based on how much open do you want the curtain to be.)
             function adjustCurtain() {
-                vm.config.range = $("#" + vm.config.id + ' .curtainRange').val();
+                vm.config.range = $(id + ' .curtainRange').val();
                 vm.config.query.range = vm.config.range;
                 vm.updateData(vm.config);
             }

@@ -11,7 +11,8 @@ var temperatureControl = (function($){
     function temperatureControl(config){
         //set the config for temperature control.
         var vm = this,
-            arrowUp, arrowDown, temperature, metric;
+            id = '#' + config.id,
+            toggle, del, arrowUp, arrowDown, temperature, metric;
 
         vm.config = config;
 
@@ -40,10 +41,14 @@ var temperatureControl = (function($){
                                                <i title="Increase temperature" class="material-icons arrow-up no-select">keyboard_arrow_up</i>\
                                            </div>\
                                         </div>');
-            arrowUp = $('#' + vm.config.id +' .arrow-up');
-            arrowDown = $('#' + vm.config.id +  ' .arrow-down');
-            temperature = $('#' + vm.config.id +' .temperatureValue');
-            metric = $('#' + vm.config.id +' .temp-metric');
+
+
+            toggle = $(id + ' .toggle');
+            del = $(id + ' .delete');
+            arrowUp = $(id +' .arrow-up');
+            arrowDown = $(id +  ' .arrow-down');
+            temperature = $(id +' .temperatureValue');
+            metric = $(id +' .temp-metric');
 
             updateTemperature();
 
@@ -51,11 +56,11 @@ var temperatureControl = (function($){
             arrowUp.on('click', increaseTemperature);
             arrowDown.on('click', decreaseTemperature);
 
-            $("#" + vm.config.id + ' .toggle').on('click', function(){
+            toggle.on('click', function(){
                 vm.toggle(vm.config);
             });
 
-            $("#" + vm.config.id + ' .delete').on('click', function(){
+            del.on('click', function(){
                 vm.delete(vm.config);
             });
         }
@@ -100,7 +105,7 @@ var temperatureControl = (function($){
 
         //Toggle between Celcisus/Farenheit Selections
         function changeMetric(evt) {
-            $('#' + vm.config.id +' .temp-metric').find('a').removeClass("active");
+            $(id +' .temp-metric').find('a').removeClass("active");
             var target = $(evt.target);
             if(evt.target.className === 'celcius') {
                 target.addClass('active');
