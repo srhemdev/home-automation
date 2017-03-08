@@ -3,8 +3,10 @@ HOME AUTOMATION CONTROL APP
 -------------------------------
 
 Components:
+--------------------------------
 
 -- app (Main App Directory)
+
      -- modules
         -- curtainsControl
             An independent curtains module which can be used to control the
