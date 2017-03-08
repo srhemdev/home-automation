@@ -1,5 +1,7 @@
 /**
  * Temperature control module
+ * Inherits the methods from switchControl factory class
+ * and has its own methods specific to its control
  */
 
 
@@ -7,15 +9,17 @@ var temperatureControl = (function($){
 
 
     function temperatureControl(config){
+        //set the config for temperature control.
         var vm = this,
             arrowUp, arrowDown, temperature, metric;
 
         vm.config = config;
 
         if(!vm.config.query) {
-            vm.config.query ={temperature :  vm.config.temperature || '40'};
+            vm.config.query = {temperature :  vm.config.temperature || '40'};
         }
 
+        //init function to handle control initialization
         function init() {
             vm.get(vm.config);
 
@@ -56,11 +60,12 @@ var temperatureControl = (function($){
             });
         }
 
-
+        //Handler to update temperature text
         function updateTemperature() {
             temperature.text(vm.config.temperature);
         }
 
+        //Handler to increase temperature
         function increaseTemperature() {
             if(arrowDown.hasClass('disabled')) {
                 arrowDown.removeClass('disabled');
@@ -77,6 +82,7 @@ var temperatureControl = (function($){
             vm.updateData(vm.config);
         }
 
+        //Handler to decrease temperature
         function decreaseTemperature() {
             if(arrowUp.hasClass('disabled')) {
                 arrowUp.removeClass('disabled');
@@ -92,6 +98,7 @@ var temperatureControl = (function($){
             vm.updateData(vm.config);
         }
 
+        //Toggle between Celcisus/Farenheit Selections
         function changeMetric(evt) {
             $('#' + vm.config.id +' .temp-metric').find('a').removeClass("active");
             var target = $(evt.target);
@@ -104,6 +111,8 @@ var temperatureControl = (function($){
             }
         }
 
+
+        //Formula to convert between celcius & farenheit
         function convertTemperature(type) {
             var result = vm.config.temperature;
             if(type === 'farenheit') {

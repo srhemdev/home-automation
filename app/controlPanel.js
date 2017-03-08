@@ -1,5 +1,6 @@
 /**
- * Control Panel to add new controls
+ * Control Panel to initialize new controls,
+ * add new controls, handle error messaging on panel
  */
 
 

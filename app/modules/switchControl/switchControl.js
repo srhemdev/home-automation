@@ -1,11 +1,14 @@
 /**
  * Switch control module
+ * Generic Module inherited by all controls in the panel.
+ * Contains commons methods which are shared across different controls.
  */
 
 var switchControl = (function($){
 
     function switchControl() {}
 
+    //Fetch the data on initialization.
     switchControl.prototype.get = function(config) {
         var display = $('#' + config.id + ' ' + config.displayClassName),
             toggle = $('#' + config.id  + ' ' + config.toggleClassName);
@@ -21,6 +24,7 @@ var switchControl = (function($){
         });
     }
 
+    //Toggle switch to ON/OFF the control
     switchControl.prototype.toggle = function(config) {
         // Toggle states and send update.
         var display = $('#' + config.id  + ' ' + config.displayClassName),
@@ -40,6 +44,11 @@ var switchControl = (function($){
         }
     }
 
+    /**
+     * Update the data on server on each change to the control.
+     * Changes can be like toggle on/off and individual controls on
+     * each added module control
+     */
     switchControl.prototype.updateData = function(config) {
         config.query.state = $(config.toggleClassName).hasClass('active');
 
@@ -59,6 +68,7 @@ var switchControl = (function($){
         });
     }
 
+    //Delete a control
     switchControl.prototype.delete = function toggle(config) {
         $('div#' + config.id + '.control').remove();
         var options = $('.control-options')[0].children;
@@ -67,6 +77,7 @@ var switchControl = (function($){
         }
     }
 
+    //Build and initialize a control
     switchControl.build = function (constr, config) {
         if (typeof switchControl[constr] !== "function") {
             throw {

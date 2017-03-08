@@ -1,12 +1,14 @@
 /**
  * Curtains control module
- *
+ * Inherits the methods from switchControl factory class
+ * and has its own methods specific to its control
  */
 
 
 var curtainsControl = (function($){
 
         function curtainsControl(config) {
+            //set the config for curtains control.
             var vm = this;
             // some defaults
             vm.config = config;
@@ -28,7 +30,7 @@ var curtainsControl = (function($){
                                             </div>\
                                         </div>');
 
-
+            //initialize the curtains control
             function init() {
                 vm.get(vm.config);
 
@@ -43,6 +45,8 @@ var curtainsControl = (function($){
                 $("#" + vm.config.id +' .curtainRange').on('change', adjustCurtain);
             }
 
+            //function to adjust curtain openness range from 0-100
+            // (based on how much open do you want the curtain to be.)
             function adjustCurtain() {
                 vm.config.range = $("#" + vm.config.id + ' .curtainRange').val();
                 vm.config.query.range = vm.config.range;

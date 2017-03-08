@@ -1,10 +1,13 @@
 /**
  * Lights control module
+ * Inherits the methods from switchControl factory class
+ * and has its own methods specific to its control
  */
 
 
 var lightsControl = (function($){
         function lightsControl(config){
+            //set the config for lights control.
             var vm = this;
             vm.config = config;
 
@@ -27,6 +30,7 @@ var lightsControl = (function($){
                                             </div>\
                                         </div>');
 
+            //init function to handle control initialization
             function init() {
 
                 vm.get(vm.config);
@@ -42,6 +46,8 @@ var lightsControl = (function($){
                 $("#" + vm.config.id +' .lightRange').on('change', adjustLightRange);
             }
 
+            //function to adjust light range from 0-100 on how dim, bright, too bright
+            // you want the light to be.
             function adjustLightRange() {
                 vm.config.range = $("#" + vm.config.id + ' .lightRange').val();
                 vm.config.query.range = vm.config.range;
