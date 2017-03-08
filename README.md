@@ -4,8 +4,8 @@ HOME AUTOMATION CONTROL APP
 
 Components:
 
-----app (Main App Directory)
-    --- modules
+-- app (Main App Directory)
+     -- modules
         -- curtainsControl
             An independent curtains module which can be used to control the
             lights of the house. It is a control which is created off the
