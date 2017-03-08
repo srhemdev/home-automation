@@ -33,7 +33,7 @@ var temperatureControl = (function($){
                                             </div>\
                                            <div class="flex-row temperatureDigits" title="Thermometer On/Off">\
                                                <span class="temperatureValue"></span>\
-                                               <span class="temp-metric"><a id="celcius" class="active">°C</a> | <a id="farenheit">°F</a></span>\
+                                               <span class="temp-metric"><a class="celcius active">°C</a> | <a class="farenheit">°F</a></span>\
                                            </div>\
                                            <div class="display flex-row hidden arrows">\
                                                <i title="Decrease temperature" class="material-icons arrow-down no-select">keyboard_arrow_down</i>\
@@ -102,10 +102,10 @@ var temperatureControl = (function($){
         function changeMetric(evt) {
             $('#' + vm.config.id +' .temp-metric').find('a').removeClass("active");
             var target = $(evt.target);
-            if(evt.target.id === 'celcius') {
+            if(evt.target.className === 'celcius') {
                 target.addClass('active');
                 convertTemperature('celcius');
-            } else if(evt.target.id === 'farenheit') {
+            } else if(evt.target.className === 'farenheit') {
                 target.addClass('active');
                 convertTemperature('farenheit');
             }
